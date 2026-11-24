@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lockd-In</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-mode="focus" data-theme="light">
+  <main class="app">
+    <header class="top-bar">
+      <div>
+        <h1>Lockd-In</h1>
+        <p class="tagline">Focus timer and to-do list</p>
+      </div>
+      <button id="theme-button" type="button">Dark mode</button>
+    </header>
+
+<!-- this below is the code snippet for "what is pomodoro" -->
+    <details class="about">
+      <summary>What is Pomodoro?</summary>
+      <p>
+        The Pomodoro Technique is a
+        <a href="https://en.wikipedia.org/wiki/Time_management" target="_blank" rel="noopener">time management</a>
+        method developed by Francesco Cirillo in the late 1980s. It uses a
+        <a href="https://en.wikipedia.org/wiki/Kitchen_timer" target="_blank" rel="noopener">kitchen timer</a>
+        to break work into intervals, typically 25 minutes long, separated by short breaks.
+        Each interval is called a pomodoro, from the Italian word for tomato, after the
+        tomato-shaped kitchen timer Cirillo used as a university student.
+      </p>
+      <p class="about-source">Source: Wikipedia</p>
+    </details>
+
+
+    <section class="card">
+      <div class="modes">
+        <button type="button" class="mode-button active" data-mode="focus">Focus</button>
+        <button type="button" class="mode-button" data-mode="short">Short Break</button>
+        <button type="button" class="mode-button" data-mode="long">Long Break</button>
+      </div>
+
+      <div class="ring-wrap">
+        <svg class="ring" viewBox="0 0 220 220" aria-hidden="true">
+          <circle class="ring-track" cx="110" cy="110" r="96"></circle>
+          <circle id="progress-ring" cx="110" cy="110" r="96"></circle>
+        </svg>
+        <div class="time-block">
+          <p id="time-display">25:00</p>
+          <p id="mode-label">Focus</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="start-button" type="button" class="primary-button">Start</button>
+        <button id="reset-button" type="button" class="secondary-button">Reset</button>
+      </div>
+
+      <p id="session-count" class="session-count">0 focus sessions today</p>
+      <p id="message" class="message"></p>
+    </section>
+
+    <section class="card">
+      <div class="task-header">
+        <h2>To-do</h2>
+        <p id="task-count">0 tasks left</p>
+      </div>
+
+      <div class="task-form">
+        <input id="task-input" type="text" placeholder="Add a task" maxlength="80">
+        <button id="add-button" type="button">Add</button>
+      </div>
+      <p id="task-error" class="task-error"></p>
+      <ul id="task-list"></ul>
+      <p class="save-note">Tasks and sessions are saved in this browser.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
